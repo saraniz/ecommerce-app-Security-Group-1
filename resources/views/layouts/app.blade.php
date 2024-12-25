@@ -10,7 +10,9 @@
 
 <body>
 	<main>
+		<x-navbar />
 		@yield('main')
 	</main>
-	</body>
+</body>
+
 </html>
