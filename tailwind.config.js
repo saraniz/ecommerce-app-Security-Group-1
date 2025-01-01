@@ -21,6 +21,7 @@ export default {
                 primaryLight: "#2edc8b",
                 primaryDark: "#1daa6f",
                 secondary: "#071a13",
+                error: "#f44336",
             }
         },
     },
