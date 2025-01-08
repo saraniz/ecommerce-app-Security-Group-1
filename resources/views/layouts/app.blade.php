@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>E-Commerce store</title>
-	@vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
+        <title>{{ config('app.name', 'E-Commerce store') }}</title>
 
-<body>
-	<main>
-		@yield('main')
-	</main>
-	</body>
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body class="font-sans antialiased">
+            <x-navbar />
+
+            <!-- Page Content -->
+            <main>
+                @yield('main')
+            </main>
+    </body>
 </html>
