@@ -8,6 +8,6 @@ class HomeController extends Controller
 {
     public function index(){
         $products =  [];
-        return view('home', compact('products'));
+        return view('buyer.home', compact('products'));
     }
 }

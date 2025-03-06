@@ -9,16 +9,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/login', function () {
+    return view('buyer.login');
+});
+
+Route::get('/register', function () {
+    return view('buyer.register');
+});
+
 Route::get('/products', function () {
-    return view('products');
+    return view('buyer.products');
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('buyer.about');
 });
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('buyer.contact');
 });
 
 
