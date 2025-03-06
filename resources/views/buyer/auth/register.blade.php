@@ -8,7 +8,7 @@
             src="https://th.bing.com/th/id/OIP.jcbAUTSLJ4MLKjrFUb6oowHaE8?rs=1&pid=ImgDetMain" 
             class="rounded img-fluid" 
             alt="Cinque Terre"
-            style="width:530px; height:530px; object-fit:cover;"
+            style="width:680px; height:680px; object-fit:cover;"
         />
         <div class="form-container">
             <h2 class="text-center">Login</h2>

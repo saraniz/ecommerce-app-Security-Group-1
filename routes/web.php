@@ -10,14 +10,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/login', function () {
-    return view('buyer.login');
+    return view('buyer.auth.login');
 });
+
 Route::get('/otp', function () {
-    return view('buyer.otp');
+    return view('buyer.auth.otp');
 });
 
 Route::get('/register', function () {
-    return view('buyer.register');
+    return view('buyer.auth.register');
+});
+
+Route::get('/forgotpassword', function () {
+    return view('buyer.auth.forgot-password');
+});
+
+Route::get('/resetpassword', function () {
+    return view('buyer.auth.reset-password');
 });
 
 Route::get('/products', function () {

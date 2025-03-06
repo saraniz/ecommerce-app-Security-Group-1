@@ -46,7 +46,7 @@
             src="https://img.freepik.com/premium-photo/online-shopping-ordering-products-your-home-internet-ordering-home-delivery-generative-ai_574777-575.jpg" 
             class="rounded img-fluid" 
             alt="Cinque Terre"
-            style="width:400px; height:400px; object-fit:cover;"
+            style="width:500px; height:500px; object-fit:cover;"
         />
     </div>
     
