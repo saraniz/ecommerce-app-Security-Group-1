@@ -100,7 +100,7 @@
           <!-- Grid column -->
 
           <!-- Grid column -->
-          <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+          <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end flex flex-row" style="flex: 1;">
             <!-- Facebook -->
             <a
                class="btn btn-outline-light btn-floating m-1"

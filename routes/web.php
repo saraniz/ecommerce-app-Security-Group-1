@@ -24,6 +24,10 @@ Route::get('/products', function () {
     return view('buyer.products');
 });
 
+Route::get('/cart', function () {
+    return view('buyer.cart');
+});
+
 Route::get('/about', function () {
     return view('buyer.about');
 });
