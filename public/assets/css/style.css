@@ -6,7 +6,10 @@ https://templatemo.com/tm-546-sixteen-clothing
 
 */
 //Hero styles
-
+html {
+	scroll-behavior: smooth;
+  }
+  
 //Hero Styles
 //login styles
 .login-container {
