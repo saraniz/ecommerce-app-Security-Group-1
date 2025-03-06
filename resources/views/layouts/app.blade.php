@@ -16,6 +16,19 @@
         <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
+        <!-- JS Scripts -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Additional Scripts -->
+        <script src="{{ asset('js/custom.js') }}"></script>
+        <script src="{{ asset('js/owl.js') }}" ></script>
+        <script src="{{ asset('js/slick.js') }}" ></script>
+        <script src="{{ asset('js/isotope.js') }}" ></script>
+        <script src="{{ asset('js/accordions.js') }}" ></script>
+
         <title>{{ config('app.name', 'E-Commerce Store') }}</title>
     </head>
     <body class="font-sans antialiased">
@@ -28,17 +41,5 @@
             @yield('main')
         </main>
         @include('components.footer')
-        <!-- JS Scripts -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-        <!-- Additional Scripts -->
-        <script src="{{ asset('assets/js/custom.js') }}" defer></script>
-        <script src="{{ asset('assets/js/owl.js') }}" defer></script>
-        <script src="{{ asset('assets/js/slick.js') }}" defer></script>
-        <script src="{{ asset('assets/js/isotope.js') }}" defer></script>
-        <script src="{{ asset('assets/js/accordions.js') }}" defer></script>
     </body>
 </html>

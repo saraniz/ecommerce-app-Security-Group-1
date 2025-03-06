@@ -1,17 +1,7 @@
 @extends('layouts.app')
 
 @section('main')
-    <!-- <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>   -->
-    <!-- ***** Preloader End ***** -->
-
     <!-- Page Content -->
-    <!-- Banner Starts Here -->
     <div class="banner header-text">
       <div class="owl-banner owl-carousel">
         <div class="banner-item-01">
@@ -34,128 +24,140 @@
         </div>
       </div>
     </div>
-    <!-- Banner Ends Here -->
 
-    <div class="latest-products">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Latest Products</h2>
-              <a href="products.html">view all products <i class="fa fa-angle-right"></i></a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_01.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$25.75</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (24)</span>
+    <section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('{{ asset('assets/images/slide_03.jpg') }}');">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
+            <h1 class="text-5xl font-bold text-white mb-4">Upgrade Your Style Today!</h1>
+            <p class="text-lg text-gray-200 mb-6 max-w-2xl">
+                Discover the latest trends and exclusive deals on premium fashion and accessories. Shop now and redefine your look!
+            </p>
+            <a href="#product" class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-full text-lg transition duration-300">
+                Shop Now
+            </a>
+        </div>
+    </section>
+    <section id="product">
+      <div class="latest-products">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="section-heading">
+                <h2>Latest Products</h2>
+                <a href="products.html">view all products <i class="fa fa-angle-right"></i></a>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_02.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$30.25</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (21)</span>
+            <div class="col-md-4">
+              <div class="product-item">
+                <a href="#"><img src="assets/images/product_01.jpg" alt=""></a>
+                <div class="down-content">
+                  <a href="#"><h4>Tittle goes here</h4></a>
+                  <h6>$25.75</h6>
+                  <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                  <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                  </ul>
+                  <span>Reviews (24)</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_03.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$20.45</h6>
-                <p>Sixteen Clothing is free CSS template provided by TemplateMo.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (36)</span>
+            <div class="col-md-4">
+              <div class="product-item">
+                <a href="#"><img src="assets/images/product_02.jpg" alt=""></a>
+                <div class="down-content">
+                  <a href="#"><h4>Tittle goes here</h4></a>
+                  <h6>$30.25</h6>
+                  <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                  <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                  </ul>
+                  <span>Reviews (21)</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_04.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$15.25</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (48)</span>
+            <div class="col-md-4">
+              <div class="product-item">
+                <a href="#"><img src="assets/images/product_03.jpg" alt=""></a>
+                <div class="down-content">
+                  <a href="#"><h4>Tittle goes here</h4></a>
+                  <h6>$20.45</h6>
+                  <p>Sixteen Clothing is free CSS template provided by TemplateMo.</p>
+                  <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                  </ul>
+                  <span>Reviews (36)</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_05.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$12.50</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (16)</span>
+            <div class="col-md-4">
+              <div class="product-item">
+                <a href="#"><img src="assets/images/product_04.jpg" alt=""></a>
+                <div class="down-content">
+                  <a href="#"><h4>Tittle goes here</h4></a>
+                  <h6>$15.25</h6>
+                  <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                  <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                  </ul>
+                  <span>Reviews (48)</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_06.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$22.50</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (32)</span>
+            <div class="col-md-4">
+              <div class="product-item">
+                <a href="#"><img src="assets/images/product_05.jpg" alt=""></a>
+                <div class="down-content">
+                  <a href="#"><h4>Tittle goes here</h4></a>
+                  <h6>$12.50</h6>
+                  <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                  <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                  </ul>
+                  <span>Reviews (16)</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-item">
+                <a href="#"><img src="assets/images/product_06.jpg" alt=""></a>
+                <div class="down-content">
+                  <a href="#"><h4>Tittle goes here</h4></a>
+                  <h6>$22.50</h6>
+                  <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                  <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                  </ul>
+                  <span>Reviews (32)</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <div class="best-features">
       <div class="container">
@@ -189,7 +191,7 @@
     </div>
 
 
-    <div class="call-to-action">
+    <div class="call-to-action mb-5">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -208,4 +210,38 @@
         </div>
       </div>
     </div>
+    <section class="py-16 bg-gray-100 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8">What Our Customers Say</h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
+                <img src="{{ asset('assets/images/user.jpeg') }}" alt="John Doe" class="w-16 h-16 rounded-full mb-4 object-cover">
+                <div class="flex mb-2">
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <p class="text-gray-600 italic">"The quality of the products is outstanding! I ordered a dress, and it fits perfectly. The material feels luxurious, and I get compliments every time I wear it. The delivery was also super quick! Will definitely shop again!"</p>
+                <h4 class="font-semibold mt-4">- John Doe</h4>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
+              <img src="{{ asset('assets/images/user.jpeg') }}" alt="John Doe" class="w-16 h-16 rounded-full mb-4 object-cover">
+                <div class="flex mb-2">
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <p class="text-gray-600 italic">"Shopping here was an amazing experience! The website is easy to navigate, and the customer service team was so helpful. My order arrived earlier than expected, and I love everything I bought. Highly recommended!"</p>
+                <h4 class="font-semibold mt-4">- Sarah Lee</h4>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
+                <img src="{{ asset('assets/images/user.jpeg') }}" alt="John Doe" class="w-16 h-16 rounded-full mb-4 object-cover">
+                <div class="flex mb-2">
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <p class="text-gray-600 italic">"Absolutely love the collection here! I’ve purchased multiple items, and every single one has exceeded my expectations. The quality, price, and fast shipping make this my go-to shopping destination."</p>
+                <h4 class="font-semibold mt-4">- Michael Smith</h4>
+            </div>
+        </div>
+    </section>
+    <script src="{{ asset('assets/js/custom.js') }}" defer></script>
+        <script src="{{ asset('assets/js/owl.js') }}" defer></script>
+        <script src="{{ asset('assets/js/slick.js') }}" defer></script>
+        <script src="{{ asset('assets/js/isotope.js') }}" defer></script>
+        <script src="{{ asset('assets/js/accordions.js') }}" defer></script>
 @endsection
