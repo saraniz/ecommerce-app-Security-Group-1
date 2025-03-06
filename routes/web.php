@@ -12,6 +12,9 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/login', function () {
     return view('buyer.login');
 });
+Route::get('/login', function () {
+    return view('buyer.login');
+});
 
 Route::get('/register', function () {
     return view('buyer.register');

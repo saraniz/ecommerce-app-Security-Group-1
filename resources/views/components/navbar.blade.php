@@ -32,8 +32,8 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item" ><a class="nav-link" href="{{ url('register') }}"><span class="glyphicon glyphicon-user"></span><i class="fas fa-user mr-2"></i> Login </a></li>
-                <li class="nav-item" ><a class="nav-link" href="{{ url('login') }}"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-user-plus mr-2"></i>  Sign up</a></li>
+                <li class="nav-item" ><a class="nav-link" href="{{ url('login') }}"><span class="glyphicon glyphicon-user"></span><i class="fas fa-user mr-2"></i> Login </a></li>
+                <li class="nav-item" ><a class="nav-link" href="{{ url('register') }}"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-user-plus mr-2"></i>  Sign up</a></li>
             </ul>
         </div>
     </nav>

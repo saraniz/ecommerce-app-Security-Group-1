@@ -5,6 +5,41 @@ TemplateMo 546 Sixteen Clothing
 https://templatemo.com/tm-546-sixteen-clothing
 
 */
+//login styles
+.login-container {
+	display: flex;
+	height: 100vh;
+}
+
+.login-form {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f9f9f9;
+}
+
+.login-form .form-container {
+	max-width: 400px;
+	width: 100%;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	background-color: white;
+}
+
+.login-form h2 {
+	margin-bottom: 20px;
+}
+
+.login-btn {
+	width: 100%;
+}
+
+.forgot-password {
+	text-align: center;
+}
+//end of login styles
 body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
