@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\buyer\auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\WelcomeMail;
 use App\Models\Token;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redis;
 
 class OTPController extends Controller
@@ -80,6 +82,12 @@ class OTPController extends Controller
             'token' => $token,
             'expired_at' => Carbon::now()->addMinutes(60),  
         ]);
+
+        $data = [
+            'name' => $user->fullname,
+        ];
+
+        Mail::to($email)->send(new WelcomeMail($data));
 
         return redirect()->route('buyer.home')
                      ->withCookie(cookie('cusauthtoken', $token, 10));

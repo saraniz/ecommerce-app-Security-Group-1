@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OTP Email</title>
+  <title>Welcome to Sixteen Clothing</title>
   <style>
     /* Reset some styles */
     body, html {
@@ -35,33 +35,37 @@
   <table align="center" width="600" class="email-container" style="background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
     <!-- Header Section -->
     <tr>
-      <td class="email-header" style="text-align: center; padding: 30px; background-color: #2c3e50; color: #ffffff; border-radius: 10px 10px 0 0;">
-        <h2 style="margin: 0; font-size: 24px;">Your OTP Code</h2>
+      <td class="email-header" style="text-align: center; padding: 30px; background-color: #3498db; color: #ffffff; border-radius: 10px 10px 0 0;">
+        <h2 style="margin: 0; font-size: 28px;">Welcome to Sixteen Clothing!</h2>
+        <p style="font-size: 16px; margin-top: 10px;">We're excited to have you with us.</p>
       </td>
     </tr>
     <!-- Body Section -->
     <tr>
       <td class="email-body" style="padding: 30px; text-align: center;">
         <p style="font-size: 16px; color: #333333; line-height: 1.6;">
-          Hello <strong>{{ $data['name'] }}</strong>,<br>
-          You have requested a One-Time Password (OTP) for verifying your account. Please find your OTP below:
-        </p>
-        <h1 style="font-size: 36px; color: #e74c3c; font-weight: bold; margin: 20px 0;">{{ $data['otp'] }}</h1>
-        <p style="font-size: 16px; color: #333333; line-height: 1.6;">
-          The OTP is valid for <strong>10 minutes</strong>. If you did not request this, please ignore this email.
+          Hi <strong>{{ $data['name'] }}</strong>,<br>
+          Thank you for signing up at <strong>Sixteen Clothing</strong>! We're thrilled to have you as part of our community.
         </p>
         <p style="font-size: 16px; color: #333333; line-height: 1.6;">
-          If you need assistance, feel free to contact our support team.
+          As a welcome gift, use the code <strong><span style="color: #e74c3c;">WELCOME10</span></strong> to get <strong>10% off</strong> on your first purchase!
         </p>
+        <p style="font-size: 16px; color: #333333; line-height: 1.6;">
+          Browse our collection and start shopping for the best deals on all your favorite products.
+        </p>
+        <!-- Call to Action Button -->
+        <a href="[Your eCommerce Link]" style="background-color: #e74c3c; color: white; padding: 12px 20px; text-decoration: none; font-size: 18px; border-radius: 5px; display: inline-block; margin-top: 20px;">
+          Start Shopping Now
+        </a>
       </td>
     </tr>
     <!-- Footer Section -->
     <tr>
       <td class="email-footer" style="background-color: #ecf0f1; padding: 20px; text-align: center; font-size: 12px; color: #7f8c8d; border-radius: 0 0 10px 10px;">
-        <p style="margin: 0;">&copy; 2025 Sixteen Clotheing. All rights reserved.</p>
+        <p style="margin: 0;">&copy; 2025 Sixteen Clothing. All rights reserved.</p>
         <p style="margin: 5px 0 0 0;">1234 Street Name, City, Country</p>
         <p style="margin: 5px 0 0 0;">
-          <a href="mailto:support@sixteenclothing.com" style="color: #3498db;">support@sixteenclothing.com</a>
+          <a href="mailto:support@[YourDomain].com" style="color: #3498db;">support@sixteenclothing.com</a>
         </p>
       </td>
     </tr>
