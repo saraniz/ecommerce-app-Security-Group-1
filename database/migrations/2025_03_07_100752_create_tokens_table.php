@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->enum('token_type', ['temp token', 'auth token']);
             $table->text('token');
-            $table->date('expired_at');
+            $table->timestamp('expired_at');
             $table->timestamps();
         });
     }

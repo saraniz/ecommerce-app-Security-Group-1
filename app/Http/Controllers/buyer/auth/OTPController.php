@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Token;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
-use Illuminate\Support\Facades\Validator;
 
 class OTPController extends Controller
 {
@@ -46,15 +46,11 @@ class OTPController extends Controller
 
         $email = $user->email;
 
-        $validator = Validator::make($request->all(), [
-            'otp' => 'required|integer|digits:6', 
-        ]);
+        $otp = implode('', $request->otp);
 
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+        if (!preg_match('/^\d{6}$/', $otp)) {
+            return back()->with('error', 'Invalid OTP format.');
         }
-
-        $otp = $request->otp;
 
         $redisKey = 'otp:' . $email;
         $storedOtp = Redis::get($redisKey);
@@ -76,11 +72,7 @@ class OTPController extends Controller
             return response()->json(['message' => 'User not found'], 404);
         }
 
-        $currentDate = now()->format('Y-m-d_H:i:s');
-
-        $tokenName = 'MyApp_auth' . $request->email . '_' . $currentDate;
-
-        $token = $user->createToken($tokenName)->plainTextToken;
+        $token = hash('sha256', Str::random(60));
 
         Token::create([
             'user_id' => $user->id,

@@ -10,7 +10,7 @@
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
 
-        <form method="POST" action="">
+        <form method="POST" action="{{ route('buyer.otp') }}">
             @csrf
             <div class="d-flex justify-content-between mb-3">
                 @for($i = 1; $i <= 6; $i++)
