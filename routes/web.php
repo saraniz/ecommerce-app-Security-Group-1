@@ -7,13 +7,13 @@ use App\Http\Controllers\buyer\auth\OTPController;
 use App\Http\Controllers\buyer\auth\RegisterController;
 use App\Http\Controllers\buyer\CartController;
 use App\Http\Controllers\buyer\CommonController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\buyer\LandController;
 use App\Http\Controllers\buyer\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SellerController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('buyer.home');
+Route::get('/', [LandController::class, 'index'])->name('buyer.home');
 
 Route::get('/login', [LoginController::class, 'index'])->name('buyer.login.form');
 
@@ -33,7 +33,7 @@ Route::get('/resetpassword', [ForgotResetController::class, 'forgotIndex']);
 
 Route::get('/products', [ProductController::class, 'index']);
 
-Route::get('/product/{id}', [ProductController::class, 'show']);
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.view');
 
 Route::get('/cart', [CartController::class, 'index']);
 

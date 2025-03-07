@@ -9,17 +9,8 @@
         <div class="mb-4">
           <!-- Main Product Image -->
           <a data-fslightbox="mygallery" class="rounded-4" target="_blank" href="">
-            <img style="width: 100%; height: auto; object-fit: cover;" class="rounded-4" src="https://th.bing.com/th/id/OIP.ILULWcgdwbf7KSMgK1McGAHaHa?rs=1&pid=ImgDetMain" alt="{{ $product->title }}" />
+            <img style="width: 100%; max-height:500px; max-width:500px; object-fit: cover;" class="rounded-4" src="{{ asset($product->main_image) }}" alt="{{ $product->title }}" />
           </a>
-        </div>
-
-        <!-- Thumbnail Images -->
-        <div class="d-flex justify-content-start gap-3">
-          @foreach($product->gallery_images as $image)
-            <a data-fslightbox="mygallery" class="border mx-1 rounded-2" target="_blank" href="{{ asset('storage/'.$image) }}">
-              <img width="80" height="80" class="rounded-2" src="{{ asset('storage/'.$image) }}" alt="thumbnail" />
-            </a>
-          @endforeach
         </div>
       </aside>
 
@@ -62,14 +53,6 @@
             <div class="col-md-6 col-12">
               <dt class="fw-bold">Color:</dt>
               <dd>{{ $product->color }}</dd>
-            </div>
-            <div class="col-md-6 col-12">
-              <dt class="fw-bold">Material:</dt>
-              <dd>{{ $product->material }}</dd>
-            </div>
-            <div class="col-md-6 col-12">
-              <dt class="fw-bold">Brand:</dt>
-              <dd>{{ $product->brand }}</dd>
             </div>
           </div>
 
