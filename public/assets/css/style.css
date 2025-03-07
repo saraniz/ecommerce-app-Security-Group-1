@@ -9,7 +9,9 @@ https://templatemo.com/tm-546-sixteen-clothing
 html {
 	scroll-behavior: smooth;
   }
-  
+#herosection{
+	background-image: url('https://images.limely.co.uk/wp-content/uploads/fashion-websites-blog.jpg');
+}
 //Hero Styles
 //login styles
 .login-container {

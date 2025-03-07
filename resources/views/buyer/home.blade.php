@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('{{ asset('assets/images/slide_03.jpg') }}');">
+    <section class="relative w-full h-screen bg-cover bg-center" id="herosection">
         <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
             <h1 class="text-5xl font-bold text-white mb-4">Upgrade Your Style Today!</h1>
             <p class="text-lg text-gray-200 mb-6 max-w-2xl">
@@ -239,6 +239,7 @@
             </div>
         </div>
     </section>
+    
     <script src="{{ asset('assets/js/custom.js') }}" defer></script>
         <script src="{{ asset('assets/js/owl.js') }}" defer></script>
         <script src="{{ asset('assets/js/slick.js') }}" defer></script>
