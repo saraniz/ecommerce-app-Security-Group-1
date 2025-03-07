@@ -18,8 +18,6 @@ class Review extends Model
         'comment',
     ];
 
-    protected $table = 'review';
-
     protected $primaryKey = 'id';
 
     public function product()

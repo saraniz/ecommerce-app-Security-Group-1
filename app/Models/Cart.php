@@ -16,8 +16,6 @@ class Cart extends Model
         'quantity',
     ];
 
-    protected $table = 'payment';
-
     protected $primaryKey = 'id';
 
     public function product()

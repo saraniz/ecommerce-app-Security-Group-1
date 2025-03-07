@@ -18,8 +18,6 @@ class ProductVariation extends Model
         'stock',
     ];
 
-    protected $table = 'product_variation';
-
     protected $primaryKey = 'id';
 
     public function product()

@@ -34,8 +34,6 @@ class User extends Authenticatable
         'password',
     ];
 
-    protected $table = 'user';
-
     protected $primaryKey = 'id';
 
     /**

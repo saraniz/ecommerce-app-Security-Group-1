@@ -21,12 +21,12 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        if(User::when('email', $request->email)->exists()){
+        if(User::where('email', $request->email)->exists()){
             return response()->json(['error'=>'User is already registerd.'],400);
         }
 
         $validator = Validator::make($request->all(),[
-            'fullname' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);

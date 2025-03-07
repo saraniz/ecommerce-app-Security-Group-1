@@ -17,8 +17,6 @@ class Payment extends Model
         'amount',
     ];
 
-    protected $table = 'payment';
-
     protected $primaryKey = 'id';
 
     public function order()

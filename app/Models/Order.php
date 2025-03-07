@@ -18,8 +18,6 @@ class Order extends Model
         'shipping_address',
     ];
 
-    protected $table = 'order';
-
     protected $primaryKey = 'id';
 
     public function user()

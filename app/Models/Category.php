@@ -16,8 +16,6 @@ class Category extends Model
         'description'
     ];
 
-    protected $table = 'category';
-
     protected $primaryKey = 'id';
 
     public function products()

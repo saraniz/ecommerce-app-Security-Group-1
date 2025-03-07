@@ -20,8 +20,6 @@ class Product extends Model
         'category_id'
     ];
 
-    protected $table = 'product';
-
     protected $primaryKey = 'id';
 
     public function category()

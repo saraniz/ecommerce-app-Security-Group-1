@@ -15,8 +15,6 @@ class Group extends Model
         'description',
     ];
 
-    protected $table = 'groups'; // Follow Laravel conventions
-
     protected $primaryKey = 'id';
 
     /**

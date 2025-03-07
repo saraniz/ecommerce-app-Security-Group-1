@@ -16,8 +16,6 @@ class Discount extends Model
         'expiration_date',
     ];
 
-    protected $table = 'discount';
-
     protected $primaryKey = 'id';
 
     public function orders()

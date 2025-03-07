@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('order', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();  // UUID as primary key for orders
             $table->uuid('user_id');        // UUID for foreign key referencing users
-            $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');  // Foreign key to users table
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  // Foreign key to users table
             $table->decimal('total_amount', 10, 2);
             $table->string('status');
             $table->string('payment_method');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('order');
+        Schema::dropIfExists('orders');
     }
 };

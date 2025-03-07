@@ -17,8 +17,6 @@ class Token extends Model
         'expired_at'
     ];
 
-    protected $table = 'token';
-
     protected $primaryKey = 'id';
 
     public function user()
