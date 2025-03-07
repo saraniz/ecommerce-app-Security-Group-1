@@ -11,7 +11,7 @@
             style="width:680px; height:680px; object-fit:cover;"
         />
         <div class="form-container">
-            <h2 class="text-center">Login</h2>
+            <h2 class="text-center">Register</h2>
             <form action="{{ route('buyer.register') }}" method="POST">
                 @csrf
 

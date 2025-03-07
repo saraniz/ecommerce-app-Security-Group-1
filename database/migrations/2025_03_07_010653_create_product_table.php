@@ -20,7 +20,7 @@ return new class extends Migration
             $table->enum('status', ['active','inactive']);
             $table->string('image')->nullable();
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categorys')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
