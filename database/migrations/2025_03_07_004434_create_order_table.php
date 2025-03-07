@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();  // UUID as primary key for orders
-            $table->uuid('user_id');        // UUID for foreign key referencing users
+            $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  // Foreign key to users table
             $table->decimal('total_amount', 10, 2);
             $table->string('status');

@@ -7,6 +7,7 @@ use App\Mail\OTPMail;
 use App\Models\Token;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -48,11 +49,7 @@ class RegisterController extends Controller
             'is_verified' => false,
         ]);
 
-        $currentDate = now()->format('Y-m-d_H:i:s');
-
-        $tokenName = 'MyApp_otp_verify' . $request->email . '_' . $currentDate;
-
-        $token = $user->createToken($tokenName)->plainTextToken;
+        $token = hash('sha256', Str::random(60));
 
         Token::create([
             'user_id' => $user->id,
@@ -67,7 +64,7 @@ class RegisterController extends Controller
         ];
 
         Mail::to($user->email)->send(new OTPMail($data));
-
+        
         return redirect()->route('buyer.otp.form')
                      ->withCookie(cookie('custemptoken', $token, 10));
     }
