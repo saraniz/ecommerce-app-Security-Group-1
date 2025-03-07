@@ -22,9 +22,7 @@ class User extends Authenticatable
         'fullname',
         'email',
         'password',
-        'address',
-        'phone',
-        'seller_id'        
+        'is_verified'
     ];
 
     /**
@@ -34,7 +32,6 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
     protected $table = 'user';
