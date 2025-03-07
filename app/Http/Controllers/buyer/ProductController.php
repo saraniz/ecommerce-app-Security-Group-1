@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function index(){
+        return view('buyer.products');
+    }
+
     public function show($id)
     {
         // Fetch the product by its ID

@@ -12,7 +12,7 @@
         />
         <div class="form-container">
             <h2 class="text-center">Login</h2>
-            <form action="" method="POST">
+            <form action="{{ route('buyer.register') }}" method="POST">
                 @csrf
 
                 <!-- Name Input -->

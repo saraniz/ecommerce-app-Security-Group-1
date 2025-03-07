@@ -1,51 +1,45 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\buyer\auth\ForgotResetController;
+use App\Http\Controllers\buyer\auth\LoginController;
+use App\Http\Controllers\buyer\auth\OTPController;
+use App\Http\Controllers\buyer\auth\RegisterController;
+use App\Http\Controllers\buyer\CartController;
+use App\Http\Controllers\buyer\CommonController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\buyer\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SellerController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('buyer.home');
 
-Route::get('/login', function () {
-    return view('buyer.auth.login');
-});
+Route::get('/login', [LoginController::class, 'index'])->name('buyer.login.form');
 
-Route::get('/otp', function () {
-    return view('buyer.auth.otp');
-});
+Route::post('/login', [LoginController::class, 'login'])->name('buyer.login');
 
-Route::get('/register', function () {
-    return view('buyer.auth.register');
-});
+Route::get('/otp', [OTPController::class, 'index'])->name('buyer.otp.form');
 
-Route::get('/forgotpassword', function () {
-    return view('buyer.auth.forgot-password');
-});
+Route::post('/otp', [OTPController::class, 'verifyOtp'])->name('buyer.otp');
 
-Route::get('/resetpassword', function () {
-    return view('buyer.auth.reset-password');
-});
+Route::get('/register',[RegisterController::class, 'index'])->name('buyer.register.form');
 
-Route::get('/products', function () {
-    return view('buyer.products');
-});
+Route::post('/register',[RegisterController::class, 'register'])->name('buyer.register');
+
+Route::get('/forgotpassword', [ForgotResetController::class, 'resetIndex']);
+
+Route::get('/resetpassword', [ForgotResetController::class, 'forgotIndex']);
+
+Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
-Route::get('/cart', function () {
-    return view('buyer.cart');
-});
+Route::get('/cart', [CartController::class, 'index']);
 
-Route::get('/about', function () {
-    return view('buyer.about');
-});
+Route::get('/about', [CommonController::class, 'aboutIndex']);
 
-Route::get('/contact', function () {
-    return view('buyer.contact');
-});
+Route::get('/contact', [CommonController::class, 'contactIndex']);
 
 
 Route::prefix('auth')->group(function () {
