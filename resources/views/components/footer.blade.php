@@ -16,9 +16,7 @@
               Sixteen Clothing
             </h6>
             <p class="text-white">
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
+              Get fill your all needs form Sixteen Clothing
             </p>
           </div>
           <!-- Grid column -->
@@ -29,16 +27,16 @@
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
             <p>
-              <a class="text-white">MDBootstrap</a>
+              <a class="text-white">Men's Clothing</a>
             </p>
             <p>
-              <a class="text-white">MDWordPress</a>
+              <a class="text-white">Women's Clothing</a>
             </p>
             <p>
-              <a class="text-white">BrandFlow</a>
+              <a class="text-white">Kids clothing</a>
             </p>
             <p>
-              <a class="text-white">Bootstrap Angular</a>
+              <a class="text-white">Home Decorations</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -92,7 +90,7 @@
             <div class="p-3">
               © 2020 Copyright:
               <a class="text-white" href="https://mdbootstrap.com/"
-                 >MDBootstrap.com</a
+                 >sixteen clotheing.com</a
                 >
             </div>
             <!-- Copyright -->

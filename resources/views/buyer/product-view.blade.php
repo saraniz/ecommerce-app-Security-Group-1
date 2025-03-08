@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main')
-<section class="py-5" >
+<section class="py-5">
   <div class="container" style="padding-top: 100px;">
     <div class="row gx-5">
       <!-- Product Images Section -->
@@ -62,9 +62,9 @@
           <div class="row mb-4">
             <div class="col-md-6 col-12">
               <label class="mb-2">Size</label>
-              <select class="form-select border border-secondary" style="height: 35px;">
+              <select class="form-select border border-secondary" id="size-select" style="height: 35px;">
                 @foreach($product->available_sizes as $size)
-                  <option>{{ $size }}</option>
+                  <option value="{{ $size }}">{{ $size }}</option>
                 @endforeach
               </select>
             </div>
@@ -85,20 +85,41 @@
 
           <!-- Action Buttons -->
           <div class="d-flex gap-3">
-            <a href="#" class="btn btn-warning shadow-0">Buy Now</a>
-            <a href="#" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Add to Cart </a>
-            <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> <i class="me-1 fa fa-heart fa-lg"></i> Save </a>
+            <a href="#" class="btn btn-warning shadow-0" onclick="addToCart()">Buy Now</a>
+            <a href="#" class="btn btn-primary shadow-0" onclick="addToCart()"> <i class="fa fa-shopping-basket"></i> Add to Cart </a>
           </div>
         </div>
       </main>
     </div>
   </div>
 </section>
+
 <script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const sizeSelect = document.getElementById('size-select');
+  const selectedSizeDisplay = document.getElementById('selected-size');
+
+  // Function to update the display of selected size
+  sizeSelect.addEventListener('change', function() {
+    const selectedSize = sizeSelect.value;
+    if (selectedSize) {
+      selectedSizeDisplay.textContent = selectedSize;
+    } else {
+      selectedSizeDisplay.textContent = "No size selected";
+    }
+  });
+
+  // Initial display of size (if there's already a selected size)
+  if (sizeSelect.value) {
+    selectedSizeDisplay.textContent = sizeSelect.value;
+  }
+});
+
   // Get the elements
   const quantityInput = document.getElementById('quantity-input');
   const buttonMinus = document.getElementById('button-minus');
   const buttonPlus = document.getElementById('button-plus');
+  const sizeSelect = document.getElementById('size-select');
 
   // Decrease quantity
   buttonMinus.addEventListener('click', () => {
@@ -113,5 +134,54 @@
     let currentValue = parseInt(quantityInput.value);
     quantityInput.value = currentValue + 1;
   });
+
+  function getProductId() {
+    const urlPath = window.location.pathname;
+    const segments = urlPath.split('/');
+    return segments[segments.length - 1];  // Assuming the last segment is the product ID
+  }
+
+  // Add to Cart function
+  function addToCart() {
+    const productId = getProductId();  // Get the product ID from the server-side
+    const size = sizeSelect.value;  // Get the selected size
+    const quantity = parseInt(quantityInput.value);  // Get the selected quantity
+
+    if (!size) {
+      alert("Please select a size!");
+      return;
+    }
+
+    // Prepare the data to send to the server
+    const cartData = {
+      product_id: productId,
+      size: size,
+      quantity: quantity
+    };
+
+    // Send the data to the backend using fetch
+    fetch("{{ url('cart/add') }}", {
+      method: "POST",
+      credentials: 'include',
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRF-TOKEN": "{{ csrf_token() }}"  // Make sure to include the CSRF token for POST requests
+      },
+      body: JSON.stringify(cartData)  // Send the data as a JSON object
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert('Product added to cart successfully!');
+        // Optionally, update the cart icon or do other things on success
+      } else {
+        alert('Failed to add product to cart.');
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+    });
+  }
 </script>
+
 @endsection
