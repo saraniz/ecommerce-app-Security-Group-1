@@ -21,24 +21,24 @@ class AuthTokenMiddleware
         $token = $request->cookie('cusauthtoken');
 
         if (!$token) {
-            return response()->json(['error' => 'Token not found in cookies.'], 400);
+            return redirect()->route('buyer.login.form');
         }
 
         $tokenRecord = Token::where('token', $token)->first();
 
         if (!$tokenRecord) {
-            return response()->json(['error' => 'Invalid or expired token.'], 400);
+            return redirect()->route('buyer.login.form');
         }
 
         if ($tokenRecord->token_type!=='auth token'){
-            return response()->json(['error' => 'Invalid token'], 400);
+            return redirect()->route('buyer.login.form');
         }
 
         $currentTime = Carbon::now();
         $tokenExpiryTime = Carbon::parse($tokenRecord->expired_at);
 
         if ($currentTime->greaterThanOrEqualTo($tokenExpiryTime)) {
-            return response()->json(['error' => 'Token has expired.'], 400);
+            return redirect()->route('buyer.login.form');
         }
 
         $userId = $tokenRecord->user_id;
@@ -46,7 +46,7 @@ class AuthTokenMiddleware
         $user = User::find($userId);
 
         if (!$user) {
-            return response()->json(['error' => 'User not found.'], 404);
+            return redirect()->route('buyer.login.form');
         }
 
         $request->merge(['user_id' => $user->id]);
