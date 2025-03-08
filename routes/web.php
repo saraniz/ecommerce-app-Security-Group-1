@@ -40,9 +40,15 @@ Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.view');
 
-Route::get('/cart', [CartController::class, 'index'])->middleware('auth.token');
+Route::get('/cart', [CartController::class, 'index'])->middleware('auth.token')->name('buyer.cart');
 
 Route::post('/cart/add', [CartController::class, 'addtocart'])->middleware('auth.token');
+
+Route::get('/cart/increase/{id}', [CartController::class, 'increaseItemQuantity'])->middleware('auth.token')->name('cart.increase');
+
+Route::get('/cart/decrease/{id}', [CartController::class, 'reduceItemQuantity'])->middleware('auth.token')->name('cart.decrease');;
+
+Route::get('/cart/remove/{id}', [CartController::class, 'removeItemFromCart'])->middleware('auth.token')->name('cart.remove');;
 
 Route::get('/about', [CommonController::class, 'aboutIndex']);
 
