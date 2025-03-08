@@ -85,8 +85,8 @@
 
           <!-- Action Buttons -->
           <div class="d-flex gap-3">
-            <a href="#" class="btn btn-warning shadow-0" onclick="addToCart()">Buy Now</a>
-            <a href="#" class="btn btn-primary shadow-0" onclick="addToCart()"> <i class="fa fa-shopping-basket"></i> Add to Cart </a>
+            <a class="btn btn-warning shadow-0" onclick="addToCart()">Buy Now</a>
+            <a class="btn btn-primary shadow-0" onclick="addToCart()"> <i class="fa fa-shopping-basket"></i> Add to Cart </a>
           </div>
         </div>
       </main>
@@ -158,6 +158,8 @@
       size: size,
       quantity: quantity
     };
+
+    console.log(cartData)
 
     // Send the data to the backend using fetch
     fetch("{{ url('cart/add') }}", {

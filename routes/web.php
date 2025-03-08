@@ -40,7 +40,9 @@ Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.view');
 
-Route::get('/cart', [CartController::class, 'index']);
+Route::get('/cart', [CartController::class, 'index'])->middleware('auth.token');
+
+Route::post('/cart/add', [CartController::class, 'addtocart'])->middleware('auth.token');
 
 Route::get('/about', [CommonController::class, 'aboutIndex']);
 
