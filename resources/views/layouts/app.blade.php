@@ -24,11 +24,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
         <!-- Additional Scripts -->
-        <script src="{{ asset('js/custom.js') }}"></script>
-        <script src="{{ asset('js/owl.js') }}" ></script>
-        <script src="{{ asset('js/slick.js') }}" ></script>
-        <script src="{{ asset('js/isotope.js') }}" ></script>
-        <script src="{{ asset('js/accordions.js') }}" ></script>
+        <script src="{{ asset('assets/js/custom.js') }}"></script>
+        <script src="{{ asset('assets/js/owl.js') }}" ></script>
+        <script src="{{ asset('assets/js/slick.js') }}" ></script>
+        <script src="{{ asset('assets/js/isotope.js') }}" ></script>
+        <script src="{{ asset('assets/js/accordions.js') }}" ></script>
 
         <title>{{ config('app.name', 'E-Commerce Store') }}</title>
     </head>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\buyer\auth\AuthController as AuthAuthController;
 use App\Http\Controllers\buyer\auth\ForgotResetController;
 use App\Http\Controllers\buyer\auth\LoginController;
 use App\Http\Controllers\buyer\auth\OTPController;
@@ -14,6 +15,10 @@ use App\Http\Controllers\SellerController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandController::class, 'index'])->name('buyer.home');
+
+Route::get('/logout', [AuthAuthController::class, 'logout'])->name('buyer.logout');
+
+Route::get('/auth/user', [AuthAuthController::class, 'auth'])->name('buyer.auth');
 
 Route::get('/login', [LoginController::class, 'index'])->name('buyer.login.form');
 
