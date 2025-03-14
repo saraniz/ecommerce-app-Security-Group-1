@@ -22,9 +22,7 @@ class User extends Authenticatable
         'fullname',
         'email',
         'password',
-        'address',
-        'phone',
-        'seller_id'        
+        'is_verified'
     ];
 
     /**
@@ -34,10 +32,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
-
-    protected $table = 'user';
 
     protected $primaryKey = 'id';
 
@@ -57,5 +52,10 @@ class User extends Authenticatable
     public function seller()
     {
         return $this->belongsTo(Seller::class);
+    }
+    
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class, 'usergroups', 'user_id', 'group_id')->withTimestamps();
     }
 }

@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('user', function (Blueprint $table) {
-            $table->uuid('seller_id')->nullable();
-            $table->foreign('seller_id')->references('id')->on('seller')->onDelete('cascade')->onUpdate('cascade');
+        Schema::create('groups', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropForeign(['seller_id']);
+        Schema::dropIfExists('groups');
     }
 };

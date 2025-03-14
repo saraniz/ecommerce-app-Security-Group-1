@@ -1,33 +1,98 @@
-<nav class="bg-white border-gray-200">
-    <div class="flex flex-wrap items-center justify-between mx-auto p-4 px-5">
-        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src={{asset('images/logo.png')}} width="80" height="80" alt="Flowbite Logo" />
-            <span class="text-xl font-semibold text-primary">E-Commerce store</span>
-        </a>
-        <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-            </svg>
-        </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white md:dark:bg-gray-900">
-                <li>
-                    <a href="" class="block py-2 px-3 text-white bg-primary rounded md:bg-transparent md:text-primary md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <h2>Sixteen <em>Clothing</em></h2>
+            </a>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/') }}">Home</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('products') }}">Our Products</a>
                 </li>
-                <li>
-                    <a href="/auth/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Sign up</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('about') }}">About Us</a>
                 </li>
-                <li>
-                    <a href="/auth/signin" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Sign in</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('contact') }}">Contact Us</a>
                 </li>
-                <li>
-                    <a href="" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Pricing</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('cart') }}">
+                        <i class="fas fa-shopping-cart mr-2"></i> 
+                    </a>
                 </li>
-                <li>
-                    <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Contact</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('wishlist') }}">
+                        <i class="fas fa-heart mr-2"></i> 
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" id="authLinks">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('login') }}">
+                        <i class="fas fa-user mr-2"></i> Login
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('register') }}">
+                        <i class="fas fa-user-plus mr-2"></i> Sign up
+                    </a>
                 </li>
             </ul>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Fetch user data to check if the user is logged in
+    fetch("{{ url('auth/user') }}", {
+        method: "GET",
+        credentials: "include",  // This ensures cookies or session data are included
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.user) {
+            // Display user info and logout option if logged in
+            document.getElementById("authLinks").innerHTML = `
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                        <i class="fas fa-user mr-2"></i> ${data.user.name}
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ url('profile') }}">Profile</a>
+                        <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+                    </div>
+                </li>
+            `;
+        }
+    })
+    .catch(error => {
+        console.error("Error fetching user:", error);
+    });
+});
+
+// Logout function triggered by clicking the "Logout" link
+function logout() {
+    fetch("{{ url('logout') }}", {
+        method: "GET",
+        credentials: "include",  // Ensure cookies or session are sent
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // After logout, reload the page to update UI and show login/signup links
+        window.location.reload();
+    })
+    .catch(error => {
+        console.error("Logout failed:", error);
+    });
+}
+</script>
