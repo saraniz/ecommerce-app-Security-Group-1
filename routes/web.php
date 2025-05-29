@@ -13,6 +13,7 @@ use App\Http\Controllers\buyer\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SellerController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', [LandController::class, 'index'])->name('buyer.home');
 
@@ -68,3 +69,7 @@ Route::prefix('auth')->group(function () {
     
     Route::get('/signin', [AuthController::class, 'siginIn'])->name('signin');
 });
+
+Route::get('admin/dashboard', [AdminController::class,'adminDashboard'])->name('admin.dashboard');
+
+Route::get('admin/profile', [AdminController::class,'adminProfile'])->name('admin.profile');
