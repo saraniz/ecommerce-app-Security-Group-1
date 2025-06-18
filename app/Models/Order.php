@@ -34,4 +34,8 @@ class Order extends Model
     {
         return $this->hasOne(Payment::class);
     }
+    public function category()
+{
+    return $this->belongsTo(Category::class);
+}
 }
