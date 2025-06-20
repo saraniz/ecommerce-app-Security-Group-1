@@ -42,17 +42,18 @@
                     <div class="col" style="padding-left:0;">ITEMS {{ count($cartItemsWithDetails) }}</div>
                     <div class="col text-right">$ {{ number_format($totalPrice, 2) }}</div>
                 </div>
-                <form>
+                <form method="post" action="{{ route('cart.checkout') }}">
+                    @csrf 
                     <p>SHIPPING</p>
                     <select><option class="text-muted">Standard-Delivery- $5.00</option></select>
                     <p>GIVE CODE</p>
                     <input id="code" placeholder="Enter your code">
+                    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                        <div class="col">TOTAL PRICE</div>
+                        <div class="col text-right">$ {{ number_format($totalPrice + 5, 2) }}</div>
+                    </div>
+                    <button class="btn">CHECKOUT</button>
                 </form>
-                <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                    <div class="col">TOTAL PRICE</div>
-                    <div class="col text-right">$ {{ number_format($totalPrice + 5, 2) }}</div>
-                </div>
-                <button class="btn">CHECKOUT</button>
             </div>
         </div>
     </div>

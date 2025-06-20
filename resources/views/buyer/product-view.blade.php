@@ -156,7 +156,8 @@
     const cartData = {
       product_id: productId,
       size: size,
-      quantity: quantity
+      quantity: quantity,
+      color: 'red'
     };
 
     console.log(cartData)

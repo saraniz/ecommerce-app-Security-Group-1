@@ -45,6 +45,8 @@ Route::get('/cart', [CartController::class, 'index'])->middleware('auth.token')-
 
 Route::post('/cart/add', [CartController::class, 'addtocart'])->middleware('auth.token');
 
+Route::post('/cart/checkout', [CartController::class, 'checkout'])->middleware('auth.token')->name('cart.checkout');
+
 Route::get('/cart/increase/{id}', [CartController::class, 'increaseItemQuantity'])->middleware('auth.token')->name('cart.increase');
 
 Route::get('/cart/decrease/{id}', [CartController::class, 'reduceItemQuantity'])->middleware('auth.token')->name('cart.decrease');;

@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Log;
 
 class OTPController extends Controller
 {
@@ -55,6 +56,7 @@ class OTPController extends Controller
         }
 
         $redisKey = 'otp:' . $email;
+        Log::info('Redis Key: ' . $redisKey);
         $storedOtp = Redis::get($redisKey);
 
         if (!$storedOtp) {
