@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <i class="fas fa-user mr-2"></i> ${data.user.name}
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ url('profile') }}">Profile</a>
+                        <a class="dropdown-item" href="{{ route('user.profile') }}">Profile</a>
                         <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
                     </div>
                 </li>
