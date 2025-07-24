@@ -5,6 +5,3 @@ name = "php"
 
 [[analyzers]]
 name = "javascript"
-
-  [analyzers.meta]
-  plugins = ["react"]
