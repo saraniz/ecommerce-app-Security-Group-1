@@ -17,6 +17,8 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [LandController::class, 'index'])->name('buyer.home');
 
+Route::get('/home', [LandController::class, 'index'])->name('user');
+
 Route::get('/logout', [AuthAuthController::class, 'logout'])->name('buyer.logout');
 
 Route::get('/auth/user', [AuthAuthController::class, 'auth'])->name('buyer.auth');
@@ -24,6 +26,9 @@ Route::get('/auth/user', [AuthAuthController::class, 'auth'])->name('buyer.auth'
 Route::get('/login', [LoginController::class, 'index'])->name('buyer.login.form');
 
 Route::post('/login', [LoginController::class, 'login'])->name('buyer.login');
+
+// Update user
+Route::put('/user/{id}', [UserController::class, 'update'])->name('user.update');
 
 Route::get('/otp', [OTPController::class, 'index'])->name('buyer.otp.form');
 
@@ -57,6 +62,11 @@ Route::get('/about', [CommonController::class, 'aboutIndex']);
 
 Route::get('/contact', [CommonController::class, 'contactIndex']);
 
+
+// Profile
+Route::get('/profile', [UserController::class, 'profile'])
+    ->middleware('auth.token')
+    ->name('user.profile');
 
 Route::prefix('auth')->group(function () {
     Route::get('/', [AuthController::class, 'defaultAuth']);    
